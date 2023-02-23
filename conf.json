@@ -8,7 +8,7 @@
             ]
         },
         {
-            "name": "Прицел от Jimbo",
+            "name": "РџСЂРёС†РµР» РѕС‚ Jimbo",
             "files": [
                 "crosshair_arcade",
                 "crosshair_Controls",
@@ -18,20 +18,20 @@
             ]
         },
         {
-            "name": "Отметки на стволах",
+            "name": "РћС‚РјРµС‚РєРё РЅР° СЃС‚РІРѕР»Р°С…",
             "files": [
                 "Marks_On_Gun"
             ]
         },
         {
-            "name": "Белые трупы",
+            "name": "Р‘РµР»С‹Рµ С‚СЂСѓРїС‹",
             "files": [
                 "wTanks",
                 "wTracks"
             ]
         },
         {
-            "name": "Анализ брони в ангаре",
+            "name": "РђРЅР°Р»РёР· Р±СЂРѕРЅРё РІ Р°РЅРіР°СЂРµ",
             "files": [
                 "izeberg.modsettingsapi_1.5.4",
                 "poliroid.modslistapi_1.4.3",
@@ -39,20 +39,20 @@
             ]
         },
         {
-            "name": "Боевые раны",
+            "name": "Р‘РѕРµРІС‹Рµ СЂР°РЅС‹",
             "files": [
                 "poliroid.battlehits_1.8.5",
                 "poliroid.modslistapi_1.4.3"
             ]
         },
         {
-            "name": "Процент отметки",
+            "name": "РџСЂРѕС†РµРЅС‚ РѕС‚РјРµС‚РєРё",
             "files": [
                 "me.poliroid.gunmarks-lebwa_3.1.2"
             ]
         },
         {
-            "name": "Время сведения",
+            "name": "Р’СЂРµРјСЏ СЃРІРµРґРµРЅРёСЏ",
             "files": [
                 "izeberg.modsettingsapi_1.5.4",
                 "poliroid.modslistapi_1.4.3",
