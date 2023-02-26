@@ -15,28 +15,36 @@
                 "crosshair_sniper",
                 "crosshair_strategic",
                 "tv.protanki.sights"
-            ]
+            ],
+            "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
+            "date": "Thu, 12 Jan 2023 10:49:05 GMT"
         },
         {
             "name": "Отметки на стволах",
             "files": [
                 "Marks_On_Gun"
-            ]
+            ],
+            "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
+            "date": "Thu, 12 Jan 2023 11:02:06 GMT"
         },
         {
             "name": "Белые трупы",
             "files": [
                 "wTanks",
                 "wTracks"
-            ]
+            ],
+            "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
+            "date": "Thu, 12 Jan 2023 10:57:06 GMT"
         },
         {
             "name": "Анализ брони в ангаре",
             "files": [
+                "tv.protanki.reducedarmor_3.4.3",
                 "izeberg.modsettingsapi_1.5.4",
-                "poliroid.modslistapi_1.4.3",
-                "tv.protanki.reducedarmor_3.4.3"
-            ]
+                "poliroid.modslistapi_1.4.3"
+            ],
+            "url": "https://dwn.wotsite.net/mod-dlya-analiza-broni-tankov-v-angare-wot.rar",
+            "date": "Wed, 18 Jan 2023 09:33:33 GMT"
         },
         {
             "name": "Боевые раны",
@@ -49,15 +57,19 @@
             "name": "Процент отметки",
             "files": [
                 "me.poliroid.gunmarks-lebwa_3.1.2"
-            ]
+            ],
+            "url": "https://down.wotspeak.org/lebwa/lebwa.tv.gunmarks.zip",
+            "date": "Mon, 16 Jan 2023 12:46:28 GMT"
         },
         {
             "name": "Время сведения",
             "files": [
+                "tv.protanki.reductioninfo_2.8.3",
                 "izeberg.modsettingsapi_1.5.4",
-                "poliroid.modslistapi_1.4.3",
-                "tv.protanki.reductioninfo_2.8.3"
-            ]
+                "poliroid.modslistapi_1.4.3"
+            ],
+            "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
+            "date": "Wed, 11 Jan 2023 16:50:15 GMT"
         }
     ]
 ]
