@@ -4,8 +4,9 @@
         {
             "name": "xvm",
             "files": [
-                "com.modxvm.xfw"
-            ]
+                "com.modxvm.xfw\\com.modxvm.xfw.actionscript_10.3.1.0003_master-lesta"
+            ],
+            "date": ""
         },
         {
             "name": "Прицел от Jimbo",
@@ -17,7 +18,7 @@
                 "tv.protanki.sights"
             ],
             "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
-            "date": "Thu, 12 Jan 2023 10:49:05 GMT"
+            "date": ""
         },
         {
             "name": "Отметки на стволах",
@@ -25,7 +26,7 @@
                 "Marks_On_Gun"
             ],
             "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
-            "date": "Thu, 12 Jan 2023 11:02:06 GMT"
+            "date": ""
         },
         {
             "name": "Белые трупы",
@@ -34,24 +35,22 @@
                 "wTracks"
             ],
             "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
-            "date": "Thu, 12 Jan 2023 10:57:06 GMT"
+            "date": ""
         },
         {
             "name": "Анализ брони в ангаре",
             "files": [
-                "tv.protanki.reducedarmor_3.4.3",
-                "izeberg.modsettingsapi_1.5.4",
-                "poliroid.modslistapi_1.4.3"
+                "tv.protanki.reducedarmor_3.4.3"
             ],
             "url": "https://dwn.wotsite.net/mod-dlya-analiza-broni-tankov-v-angare-wot.rar",
-            "date": "Wed, 18 Jan 2023 09:33:33 GMT"
+            "date": ""
         },
         {
             "name": "Боевые раны",
             "files": [
-                "poliroid.battlehits_1.8.5",
-                "poliroid.modslistapi_1.4.3"
-            ]
+                "poliroid.battlehits_1.8.5"
+            ],
+            "date": ""
         },
         {
             "name": "Процент отметки",
@@ -59,17 +58,15 @@
                 "me.poliroid.gunmarks-lebwa_3.1.2"
             ],
             "url": "https://down.wotspeak.org/lebwa/lebwa.tv.gunmarks.zip",
-            "date": "Mon, 16 Jan 2023 12:46:28 GMT"
+            "date": ""
         },
         {
             "name": "Время сведения",
             "files": [
-                "tv.protanki.reductioninfo_2.8.3",
-                "izeberg.modsettingsapi_1.5.4",
-                "poliroid.modslistapi_1.4.3"
+                "tv.protanki.reductioninfo_2.8.3"
             ],
             "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
-            "date": "Wed, 11 Jan 2023 16:50:15 GMT"
+            "date": ""
         }
     ]
 ]

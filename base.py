@@ -2,7 +2,8 @@ import os
 import json
 import PySimpleGUI as sg
 from urllib.request import urlopen, Request
-import time
+from datetime import datetime
+from pathlib import Path
 
 with open('conf.json', encoding='utf-8') as fp:
     data = json.load(fp)
@@ -15,37 +16,36 @@ MODSLIST = os.listdir(MODSDIR)
 
 sg.theme('PythonPlus')
 
-def my_color(ff):                   # mod's color at mods list
-    count = 0
-    for f in ff:
-        for m in MODSLIST:
-            if f in m:
-                count += 1
-                break
-    if count == len(ff):
-        return 'white'
-    else:
-        return 'black'
-
 def ch(mod):                                        # enable or disable
     if mod['files'][0] + '.wotmod' in MODSLIST:
         return True
 
+def my_color(mod):                                  # mod's color at mods list
+    if mod['files'][0] in map(lambda x: x[:-7], MODSLIST):
+        if not mod['date']:
+            mod['date'] = datetime.fromtimestamp(os.path.getctime(mod['files'][0])).strftime('%d %b %Y')
+        return 'white'
+    else:
+        if not mod['date']:
+            mod['date'] = '01 Jan 2023'
+        return 'black'
+
 def upd(mod):                                       # Last-Modified
-    if not mod.get('url'):
+    if not 'url' in mod:
         return False
     res = urlopen(Request(mod['url'], headers={"User-Agent": "Mozilla/5.0"})).info()['Last-Modified']
-    if time.strptime(res, '%a, %d %b %Y %H:%M:%S %Z') > time.strptime(mod['date'], '%a, %d %b %Y %H:%M:%S %Z'):
+    if datetime.strptime(res[5:16], '%d %b %Y') > datetime.strptime(mod['date'], '%d %b %Y'):
         return True
+    else:
+        return False
 
 layout = [[sg.Text('Папка c игрой:')],
           [sg.Input(default_text=GAMEDIR), sg.FolderBrowse()],
           [sg.Text('Версия игры:   '), sg.Text(VERSION)]]
 for mod in mods:
-    tmp = [sg.Check('', default=ch(mod), key=mod["name"])]
-    tmp += [sg.Text(mod["name"], text_color=my_color(mod['files']))]
-    if upd(mod):
-        tmp += [sg.Button('upd', key=mod["name"])]
+    tmp = [sg.Check('', default=ch(mod), key=mod["name"])]                  # checkbutton
+    tmp += [sg.Text(mod["name"], text_color=my_color(mod))]                 # mod name
+    tmp += [sg.Button('upd', key=mod["name"])] * upd(mod)                   # update button
     layout += [tmp]
 layout += [[sg.Button('Применить'), sg.Button('Обновить все')],
            [sg.Button('CLOSE', button_color='red')]]
