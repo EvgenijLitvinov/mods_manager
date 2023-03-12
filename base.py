@@ -4,6 +4,7 @@ import PySimpleGUI as sg
 from urllib.request import urlopen, Request
 from datetime import datetime
 from pathlib import Path
+from bs4 import BeautifulSoup
 
 with open('conf.json', encoding='utf-8') as fp:
     data = json.load(fp)
@@ -27,9 +28,13 @@ def my_color(mod):                                  # mod's color at mods list
         return 'black'
 
 def upd(mod):                                       # Last-Modified
-    if not 'url' in mod:
-        return False
-    res = urlopen(Request(mod['url'], headers={"User-Agent": "Mozilla/5.0"})).info()['Last-Modified']
+    url = mod['url']
+    if 'cls' in mod:
+        res = urlopen(Request(url, headers={"User-Agent": "Mozilla/5.0"})).read().decode('utf-8')
+        soup = BeautifulSoup(res, 'lxml')
+        s = soup.find('a', mod['cls'])['href']
+        url = s[s.find('https') : s.find('&')]
+    res = urlopen(Request(url, headers={"User-Agent": "Mozilla/5.0"})).info()['Last-Modified']
     if datetime.strptime(res[5:16], '%d %b %Y') > datetime.strptime(mod['date'], '%d %b %Y'):
         return True
     else:
