@@ -1,0 +1,75 @@
+[
+    "",
+    [
+        {
+            "name": "xvm",
+            "files": [
+                "com.modxvm.xfw\\com.modxvm.xfw.actionscript"
+            ],
+            "url": "https://nightly.modxvm.com/download/master/xvm_latest.zip",
+            "date": ""
+        },
+        {
+            "name": "Прицел от Jimbo",
+            "files": [
+                "crosshair_arcade",
+                "crosshair_Controls",
+                "crosshair_sniper",
+                "crosshair_strategic",
+                "tv.protanki.sights"
+            ],
+            "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
+            "date": ""
+        },
+        {
+            "name": "Отметки на стволах",
+            "files": [
+                "Marks_On_Gun"
+            ],
+            "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
+            "date": ""
+        },
+        {
+            "name": "Белые трупы",
+            "files": [
+                "wTanks",
+                "wTracks"
+            ],
+            "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
+            "date": ""
+        },
+        {
+            "name": "Анализ брони в ангаре",
+            "files": [
+                "tv.protanki.reducedarmor_3.4.3"
+            ],
+            "url": "https://dwn.wotsite.net/mod-dlya-analiza-broni-tankov-v-angare-wot.rar",
+            "date": ""
+        },
+        {
+            "name": "Боевые раны",
+            "files": [
+                "poliroid.battlehits"
+            ],
+            "url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
+            "cls": "down_new",
+            "date": ""
+        },
+        {
+            "name": "Процент отметки",
+            "files": [
+                "me.poliroid.gunmarks-lebwa_3.1.2"
+            ],
+            "url": "https://down.wotspeak.org/lebwa/lebwa.tv.gunmarks.zip",
+            "date": ""
+        },
+        {
+            "name": "Время сведения",
+            "files": [
+                "tv.protanki.reductioninfo_2.8.3"
+            ],
+            "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
+            "date": ""
+        }
+    ]
+]
