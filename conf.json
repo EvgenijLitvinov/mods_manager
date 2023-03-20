@@ -1,5 +1,6 @@
 [
     "D:\\Lesta\\Tanki",
+    "D:\\apps\\7-Zip\\7z",
     [
         {
             "name": "xvm",
@@ -7,7 +8,8 @@
                 "com.modxvm.xfw\\com.modxvm.xfw.actionscript"
             ],
             "url": "https://nightly.modxvm.com/download/master/xvm_latest.zip",
-            "date": ""
+            "flag": true,
+            "date": "14 Feb 2023"
         },
         {
             "name": "Прицел от Jimbo",
@@ -19,7 +21,8 @@
                 "tv.protanki.sights"
             ],
             "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
-            "date": ""
+            "flag": true,
+            "date": "14 Feb 2023"
         },
         {
             "name": "Отметки на стволах",
@@ -27,7 +30,8 @@
                 "Marks_On_Gun"
             ],
             "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
-            "date": ""
+            "flag": true,
+            "date": "14 Feb 2023"
         },
         {
             "name": "Белые трупы",
@@ -36,7 +40,8 @@
                 "wTracks"
             ],
             "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
-            "date": ""
+            "flag": true,
+            "date": "14 Feb 2023"
         },
         {
             "name": "Анализ брони в ангаре",
@@ -44,7 +49,8 @@
                 "tv.protanki.reducedarmor_3.4.3"
             ],
             "url": "https://dwn.wotsite.net/mod-dlya-analiza-broni-tankov-v-angare-wot.rar",
-            "date": ""
+            "flag": true,
+            "date": "14 Feb 2023"
         },
         {
             "name": "Боевые раны",
@@ -52,8 +58,10 @@
                 "poliroid.battlehits"
             ],
             "url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
+            "flag": true,
             "cls": "down_new",
-            "date": ""
+            "date": "14 Feb 2023",
+            "url0": "https://modp.wgcdn.co/media/mod_files/1.20.0.1_BattleHits_1.8.6.zip"
         },
         {
             "name": "Процент отметки",
@@ -61,7 +69,8 @@
                 "me.poliroid.gunmarks-lebwa_3.1.2"
             ],
             "url": "https://down.wotspeak.org/lebwa/lebwa.tv.gunmarks.zip",
-            "date": ""
+            "flag": true,
+            "date": "14 Feb 2023"
         },
         {
             "name": "Время сведения",
@@ -69,7 +78,8 @@
                 "tv.protanki.reductioninfo_2.8.3"
             ],
             "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
-            "date": ""
+            "flag": false,
+            "date": "14 Feb 2023"
         }
     ]
 ]

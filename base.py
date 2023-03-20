@@ -1,15 +1,16 @@
 #import os
 import json
 import PySimpleGUI as sg
-from urllib.request import urlopen, Request
+from urllib.request import urlopen, Request, urlretrieve
 from datetime import datetime
 from pathlib import Path
 from bs4 import BeautifulSoup
+from subprocess import call
 
 with open('conf.json', encoding='utf-8') as fp:
     data = json.load(fp)
-GAMEDIR, mods = data
-with open(Path(GAMEDIR, 'version.xml')) as px:               # game version
+GAMEDIR, ARCH, mods = data                                  # ARCH - path to 7z
+with open(Path(GAMEDIR, 'version.xml')) as px:              # game version
     for _ in range(3):
         VERSION = px.readline()[13:-18]
 MODSDIR = Path(GAMEDIR, 'mods', VERSION)
@@ -27,6 +28,7 @@ def my_color(mod):                                  # mod's color at mods list
         return 'black'
 
 def upd(mod):                                       # Last-Modified
+#    return True
     url = mod['url']
     if 'cls' in mod:
         res = urlopen(Request(url, headers={"User-Agent": "Mozilla/5.0"})).read().decode('utf-8')
@@ -43,8 +45,19 @@ def upd(mod):                                       # Last-Modified
 # ------------------------------- download & install mod -------------------    
 def inst(mod):
     sg.popup_ok(f'Installing {mod["name"]}', background_color='red', no_titlebar=True)
-    mod.pop('flag')
-
+    if 'url0' in mod:
+        url = mod['url0']
+    else:
+        url = mod['url']
+    tmparj = Path('temp.arj')
+    urlretrieve(url, tmparj)
+    if not 'pathes' in mod:
+        call(f'{ARCH} x -y {tmparj} -i!mods -o{GAMEDIR}', shell=True)
+    else:
+        pass
+    tmparj.unlink()
+    mod['flag'] = False
+# -------------------------------------------------------------------------------
 layout = [[sg.Text('Папка c игрой:')],
           [sg.Input(default_text=GAMEDIR), sg.FolderBrowse()],
           [sg.Text('Версия игры:   '), sg.Text(VERSION)]]
@@ -57,20 +70,20 @@ for mod in mods:
     tmp += [sg.Button('upd', key=mod["name"])] * upd(mod)                       # update button
     layout += [tmp]
 layout += [[sg.Button('Применить'), sg.Button('Обновить все')],
-           [sg.Button('CLOSE', button_color='red')]]
+           [sg.CloseButton('CLOSE', button_color='red')]]
 
 window = sg.Window('Hello world!', layout)
 
 while True:
     event, values = window.read()
     print(event, values)
-    if event in (sg.WIN_CLOSED, 'CLOSE'):
+    if event == sg.WIN_CLOSED:
         break
     if event == 'Применить':
         continue
     if event == 'Обновить все':
         for mod in mods:
-            if 'flag' in mod:
+            if mod['flag']:
                 inst(mod)
                 pos = mods.index(mod)
                 window[mod["name"]+str(pos)].update(visible=False)
@@ -80,8 +93,8 @@ while True:
             inst(mod)
             window[event].update(visible=False)
 
-data = GAMEDIR, mods
+data = GAMEDIR, ARCH, mods
 with open('conf.json', 'w', encoding='utf-8') as fp:
-    data = json.dump(data, fp, indent=4)
+    data = json.dump(data, fp, ensure_ascii=False, indent=4)
 
 window.close()
