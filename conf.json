@@ -9,7 +9,11 @@
             ],
             "url": "https://nightly.modxvm.com/download/master/xvm_latest.zip",
             "flag": true,
-            "date": "14 Feb 2023"
+            "date": "14 Feb 2023",
+            "pathes": [
+                "lesta\\mods",
+                "lesta\\res_mods"
+            ]
         },
         {
             "name": "Прицел от Jimbo",
@@ -22,7 +26,11 @@
             ],
             "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
             "flag": true,
-            "date": "14 Feb 2023"
+            "date": "14 Feb 2023",
+            "pathes": [
+                "mods",
+                "Сведение 2\\crosshair_Controls.wotmod"
+            ]
         },
         {
             "name": "Отметки на стволах",
@@ -31,17 +39,26 @@
             ],
             "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
             "flag": true,
-            "date": "14 Feb 2023"
+            "date": "14 Feb 2023",
+            "pathes": [
+                "Вариант 2\\mods"
+            ]
         },
         {
             "name": "Белые трупы",
             "files": [
                 "wTanks",
-                "wTracks"
+                "wTanks_lst",
+                "wTracks",
+                "wTracks_lst"
             ],
             "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
             "flag": true,
-            "date": "14 Feb 2023"
+            "date": "14 Feb 2023",
+            "pathes": [
+                "Белые сбитые гусеницы\\Lesta\\mods",
+                "Белые трупы\\Lesta\\mods"
+            ]
         },
         {
             "name": "Анализ брони в ангаре",
@@ -78,7 +95,7 @@
                 "tv.protanki.reductioninfo_2.8.3"
             ],
             "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
-            "flag": false,
+            "flag": true,
             "date": "14 Feb 2023"
         }
     ]

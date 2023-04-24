@@ -9,7 +9,8 @@
             ],
             "url": "https://nightly.modxvm.com/download/master/xvm_latest.zip",
             "flag": false,
-            "date": ""
+            "date": "",
+            "pathes": ["lesta\\mods", "lesta\\res_mods"]
         },
         {
             "name": "Прицел от Jimbo",
@@ -22,7 +23,8 @@
             ],
             "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
             "flag": false,
-            "date": ""
+            "date": "",
+            "pathes": ["mods", "Сведение 2\\crosshair_Controls.wotmod"]
         },
         {
             "name": "Отметки на стволах",
@@ -31,17 +33,19 @@
             ],
             "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
             "flag": false,
-            "date": ""
+            "date": "",
+            "pathes": ["Вариант 2\\mods"]
         },
         {
             "name": "Белые трупы",
             "files": [
-                "wTanks",
-                "wTracks"
+                "wTanks", "wTanks_lst",
+                "wTracks", "wTracks_lst"
             ],
             "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
             "flag": false,
-            "date": ""
+            "date": "",
+            "pathes": ["Белые сбитые гусеницы\\Lesta\\mods", "Белые трупы\\Lesta\\mods"]
         },
         {
             "name": "Анализ брони в ангаре",

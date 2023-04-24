@@ -2,10 +2,12 @@
 import json
 import PySimpleGUI as sg
 from urllib.request import urlopen, Request, urlretrieve
+import requests
 from datetime import datetime
 from pathlib import Path
 from bs4 import BeautifulSoup
 from subprocess import call
+from shutil import rmtree
 
 with open('conf.json', encoding='utf-8') as fp:
     data = json.load(fp)
@@ -31,12 +33,11 @@ def upd(mod):                                       # Last-Modified
 #    return True
     url = mod['url']
     if 'cls' in mod:
-        res = urlopen(Request(url, headers={"User-Agent": "Mozilla/5.0"})).read().decode('utf-8')
-        soup = BeautifulSoup(res, 'lxml')
+        soup = BeautifulSoup(requests.get(url, stream=True).content, 'lxml')
         s = soup.find('a', mod['cls'])['href']
         url = s[s.find('https') : s.find('&')]
         mod['url0'] = url
-    res = urlopen(Request(url, headers={"User-Agent": "Mozilla/5.0"})).info()['Last-Modified']
+    res = requests.get(url, stream=True).headers['last-modified']
     if datetime.strptime(res[5:16], '%d %b %Y') > datetime.strptime(mod['date'], '%d %b %Y'):
         mod['flag'] = True
         return True
@@ -54,9 +55,17 @@ def inst(mod):
     if not 'pathes' in mod:
         call(f'{ARCH} x -y {tmparj} -i!mods -o{GAMEDIR}', shell=True)
     else:
-        pass
+        call(f'{ARCH} x -y {tmparj} -ooops', shell=True)
+        for p in mod['pathes']:
+            p = Path(p)
+            if p.is_dir():
+                call(f'xcopy /y /e {"oops"/p} {GAMEDIR/p.parts[-1]} > nul', shell=True)
+            else:
+                MODSDIR.write_bytes('oops'/p.read_bytes())
+        rmtree('oops')
     tmparj.unlink()
     mod['flag'] = False
+    mod['date'] = datetime.now().strftime('%d %b %Y')
 # -------------------------------------------------------------------------------
 layout = [[sg.Text('Папка c игрой:')],
           [sg.Input(default_text=GAMEDIR), sg.FolderBrowse()],
