@@ -30,7 +30,6 @@ def my_color(mod):                                  # mod's color at mods list
         return 'black'
 
 def upd(mod):                                       # Last-Modified
-#    return True
     url = mod['url']
     if 'cls' in mod:
         soup = BeautifulSoup(requests.get(url, stream=True).content, 'lxml')
@@ -50,18 +49,18 @@ def inst(mod):
         url = mod['url0']
     else:
         url = mod['url']
-    tmparj = Path('temp.arj')
-    urlretrieve(url, tmparj)
+    tmparj = Path('tmparj')
+    tmparj.write_bytes(requests.get(url, stream=True).content)
     if not 'pathes' in mod:
         call(f'{ARCH} x -y {tmparj} -i!mods -o{GAMEDIR}', shell=True)
     else:
-        call(f'{ARCH} x -y {tmparj} -ooops', shell=True)
+        call(f'{ARCH} x -y {tmparj} -ooops > nul', shell=True)
         for p in mod['pathes']:
-            p = Path(p)
+            p = Path('oops', p)
             if p.is_dir():
-                call(f'xcopy /y /e {"oops"/p} {GAMEDIR/p.parts[-1]} > nul', shell=True)
+                call(f'xcopy /y /e {p} {Path(MODSDIR, p.parts[-1])} > nul', shell=True)
             else:
-                MODSDIR.write_bytes('oops'/p.read_bytes())
+                Path(MODSDIR, p.parts[-1]).write_bytes(p.read_bytes())
         rmtree('oops')
     tmparj.unlink()
     mod['flag'] = False

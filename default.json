@@ -59,7 +59,7 @@
         {
             "name": "Боевые раны",
             "files": [
-                "poliroid.battlehits"
+                "me.poliroid.battlehits"
             ],
             "url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
             "flag": false,

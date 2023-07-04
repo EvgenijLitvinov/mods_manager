@@ -9,7 +9,7 @@
             ],
             "url": "https://nightly.modxvm.com/download/master/xvm_latest.zip",
             "flag": true,
-            "date": "14 Feb 2023",
+            "date": "01 Jan 2023",
             "pathes": [
                 "lesta\\mods",
                 "lesta\\res_mods"
@@ -26,7 +26,7 @@
             ],
             "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
             "flag": true,
-            "date": "14 Feb 2023",
+            "date": "01 Jan 2023",
             "pathes": [
                 "mods",
                 "Сведение 2\\crosshair_Controls.wotmod"
@@ -38,8 +38,8 @@
                 "Marks_On_Gun"
             ],
             "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
-            "flag": true,
-            "date": "14 Feb 2023",
+            "flag": false,
+            "date": "14 May 2023",
             "pathes": [
                 "Вариант 2\\mods"
             ]
@@ -53,8 +53,8 @@
                 "wTracks_lst"
             ],
             "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
-            "flag": true,
-            "date": "14 Feb 2023",
+            "flag": false,
+            "date": "14 May 2023",
             "pathes": [
                 "Белые сбитые гусеницы\\Lesta\\mods",
                 "Белые трупы\\Lesta\\mods"
@@ -66,19 +66,19 @@
                 "tv.protanki.reducedarmor_3.4.3"
             ],
             "url": "https://dwn.wotsite.net/mod-dlya-analiza-broni-tankov-v-angare-wot.rar",
-            "flag": true,
-            "date": "14 Feb 2023"
+            "flag": false,
+            "date": "14 May 2023"
         },
         {
             "name": "Боевые раны",
             "files": [
-                "poliroid.battlehits"
+                "me.poliroid.battlehits"
             ],
             "url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
-            "flag": true,
+            "flag": false,
             "cls": "down_new",
-            "date": "14 Feb 2023",
-            "url0": "https://modp.wgcdn.co/media/mod_files/1.20.0.1_BattleHits_1.8.6.zip"
+            "date": "14 May 2023",
+            "url0": "https://modp.wgcdn.co/media/mod_files/1.20.1.1_BattleHits_1.8.6.zip"
         },
         {
             "name": "Процент отметки",
@@ -86,8 +86,8 @@
                 "me.poliroid.gunmarks-lebwa_3.1.2"
             ],
             "url": "https://down.wotspeak.org/lebwa/lebwa.tv.gunmarks.zip",
-            "flag": true,
-            "date": "14 Feb 2023"
+            "flag": false,
+            "date": "14 May 2023"
         },
         {
             "name": "Время сведения",
@@ -95,8 +95,8 @@
                 "tv.protanki.reductioninfo_2.8.3"
             ],
             "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
-            "flag": true,
-            "date": "14 Feb 2023"
+            "flag": false,
+            "date": "14 May 2023"
         }
     ]
 ]
