@@ -42,6 +42,15 @@ def upd(mod):                                       # Last-Modified
         return True
     else:
         return False
+
+def mod_version(mod):                               # version of mod
+    if mod['name'] == 'xvm':
+        return requests.get(mod['v_url']).text.strip()
+    soup = BeautifulSoup(requests.get(mod['v_url'], stream=True).content, 'lxml')
+    if mod['v_url'][:16] == 'https://wotspeak':
+        return soup.find('label', 'patch').text
+    return soup.find('div', 'heading-mat').text.strip().split(' ')[-1]      # wotsite.net
+
 # ------------------------------- download & install mod -------------------    
 def inst(mod):
     sg.popup_ok(f'Installing {mod["name"]}', background_color='red', no_titlebar=True)
@@ -58,9 +67,9 @@ def inst(mod):
         for p in mod['pathes']:
             p = Path('oops', p)
             if p.is_dir():
-                call(f'xcopy /y /e {p} {Path(MODSDIR, p.parts[-1])} > nul', shell=True)
+                call(f'xcopy /y /e {p} {Path(GAMEDIR, p.parts[-1])} > nul', shell=True)
             else:
-                Path(MODSDIR, p.parts[-1]).write_bytes(p.read_bytes())
+                MODSDIR.write_bytes(p.read_bytes())
         rmtree('oops')
     tmparj.unlink()
     mod['flag'] = False
@@ -75,7 +84,7 @@ for mod in mods:
         real_f = file
     tmp = [sg.Check('', default=real_f.suffix == '.wotmod', key=mod["name"])]     # checkbutton
     tmp += [sg.Text(mod["name"], text_color=my_color(mod))]                     # mod name
-    tmp += [sg.Button('upd', key=mod["name"])] * upd(mod)                       # update button
+    tmp += upd(mod) * [sg.Button('upd', key=mod["name"]), sg.Text(mod_version(mod))]   # update button
     layout += [tmp]
 layout += [[sg.Button('Применить'), sg.Button('Обновить все')],
            [sg.CloseButton('CLOSE', button_color='red')]]

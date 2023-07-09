@@ -8,6 +8,7 @@
                 "com.modxvm.xfw\\com.modxvm.xfw.actionscript"
             ],
             "url": "https://nightly.modxvm.com/download/master/xvm_latest.zip",
+            "v_url": "https://nightly.modxvm.com/download/master/wot_version_lesta.txt",
             "flag": true,
             "date": "01 Jan 2023",
             "pathes": [
@@ -25,8 +26,9 @@
                 "tv.protanki.sights"
             ],
             "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
-            "flag": true,
-            "date": "01 Jan 2023",
+            "v_url": "https://wotsite.net/pritsely/4333-pritsely-ot-jimbo-dlya-world-of-tanks.html",
+            "flag": false,
+            "date": "09 Jul 2023",
             "pathes": [
                 "mods",
                 "Сведение 2\\crosshair_Controls.wotmod"
@@ -38,8 +40,9 @@
                 "Marks_On_Gun"
             ],
             "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
-            "flag": false,
-            "date": "14 May 2023",
+            "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/12202-mod-stvol-uluchshennye-otlichitelnye-otmetki-na-stvolakh.html",
+            "flag": true,
+            "date": "01 Jan 2023",
             "pathes": [
                 "Вариант 2\\mods"
             ]
@@ -53,8 +56,9 @@
                 "wTracks_lst"
             ],
             "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
-            "flag": false,
-            "date": "14 May 2023",
+            "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/4873-mod-ubitykh-tankov-wot.html",
+            "flag": true,
+            "date": "01 Jan 2023",
             "pathes": [
                 "Белые сбитые гусеницы\\Lesta\\mods",
                 "Белые трупы\\Lesta\\mods"
@@ -66,8 +70,9 @@
                 "tv.protanki.reducedarmor_3.4.3"
             ],
             "url": "https://dwn.wotsite.net/mod-dlya-analiza-broni-tankov-v-angare-wot.rar",
-            "flag": false,
-            "date": "14 May 2023"
+            "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/12309-mod-dlya-analiza-broni-tankov-pryamo-v-angare-dlya-wot.html",
+            "flag": true,
+            "date": "01 Jan 2023"
         },
         {
             "name": "Боевые раны",
@@ -75,19 +80,21 @@
                 "me.poliroid.battlehits"
             ],
             "url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
-            "flag": false,
+            "v_url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
+            "flag": true,
             "cls": "down_new",
-            "date": "14 May 2023",
-            "url0": "https://modp.wgcdn.co/media/mod_files/1.20.1.1_BattleHits_1.8.6.zip"
+            "date": "01 Jan 2023",
+            "url0": "https://modp.wgcdn.co/media/mod_files/1.21.0.0_BattleHits_1.8.8.zip"
         },
         {
             "name": "Процент отметки",
             "files": [
                 "me.poliroid.gunmarks-lebwa_3.1.2"
             ],
-            "url": "https://down.wotspeak.org/lebwa/lebwa.tv.gunmarks.zip",
-            "flag": false,
-            "date": "14 May 2023"
+            "url": "https://down.wotspeak.org/mods_universal/lebwa.tv.gunmarks.zip",
+            "v_url": "https://wotspeak.org/mods/756-procent-otmetki-orudie-wot.html",
+            "flag": true,
+            "date": "01 Jan 2023"
         },
         {
             "name": "Время сведения",
@@ -95,8 +102,9 @@
                 "tv.protanki.reductioninfo_2.8.3"
             ],
             "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
-            "flag": false,
-            "date": "14 May 2023"
+            "v_url": "https://wotspeak.org/mods/807-indikaciya-vremya-svedeniya-pricela-dlya-world-of-tanks.html",
+            "flag": true,
+            "date": "01 Jan 2023"
         }
     ]
 ]
