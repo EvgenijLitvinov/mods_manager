@@ -54,7 +54,7 @@
         {
             "name": "Анализ брони в ангаре",
             "files": [
-                "tv.protanki.reducedarmor_3.4.3"
+                "tv.protanki.reducedarmor"
             ],
             "url": "https://dwn.wotsite.net/mod-dlya-analiza-broni-tankov-v-angare-wot.rar",
             "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/12309-mod-dlya-analiza-broni-tankov-pryamo-v-angare-dlya-wot.html",
@@ -75,7 +75,7 @@
         {
             "name": "Процент отметки",
             "files": [
-                "me.poliroid.gunmarks-lebwa_3.1.2"
+                "me.poliroid.gunmarks-lebwa"
             ],
             "url": "https://down.wotspeak.org/mods_universal/lebwa.tv.gunmarks.zip",
             "v_url": "https://wotspeak.org/mods/756-procent-otmetki-orudie-wot.html",
@@ -85,7 +85,7 @@
         {
             "name": "Время сведения",
             "files": [
-                "tv.protanki.reductioninfo_2.8.3"
+                "tv.protanki.reductioninfo"
             ],
             "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
             "v_url": "https://wotspeak.org/mods/807-indikaciya-vremya-svedeniya-pricela-dlya-world-of-tanks.html",

@@ -19,6 +19,26 @@ MODSDIR = Path(GAMEDIR, 'mods', VERSION)
 
 sg.theme('PythonPlus')
 
+def foo(mod):                                               # for rendering
+    for file in mod['files']:
+        real_f = tuple(MODSDIR.glob(f'{file}*'))
+        if not real_f:
+            return False, 'black', True                     # check, color, upd
+    check = real_f[0].suffix == '.wotmod'
+    url = mod['url']                                        # Last-Modified
+    if mod['name'] == 'Боевые раны':
+        soup = BeautifulSoup(requests.get(url, stream=True).content, 'lxml')
+        s = soup.find('a', 'down_new')['href']
+        url = s[s.find('https') : s.find('&')]
+        mod['dwn'] = url
+    last_m = requests.get(url, stream=True).headers['last-modified']
+    create_f = datetime.fromtimestamp(Path.stat(real_f[0]).st_ctime).strftime('%d %b %Y')
+    if datetime.strptime(last_m[5:16], '%d %b %Y') > create_f:
+        upd = True
+    else:
+        upd = False
+    return check, 'white', upd                              # check, color, upd
+
 def my_color(mod):                                  # mod's color at mods list
     if real_f.exists():
         if not mod['date']:
@@ -69,7 +89,7 @@ def inst(mod):
             if p.is_dir():
                 call(f'xcopy /y /e {p} {Path(GAMEDIR, p.parts[-1])} > nul', shell=True)
             else:
-                MODSDIR.write_bytes(p.read_bytes())
+                Path(MODSDIR, p.parts[-1]).write_bytes(p.read_bytes())
         rmtree('oops')
     tmparj.unlink()
     mod['flag'] = False
