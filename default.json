@@ -9,8 +9,6 @@
             ],
             "url": "https://nightly.modxvm.com/download/master/xvm_latest.zip",
             "v_url": "https://nightly.modxvm.com/download/master/wot_version_lesta.txt",
-            "flag": false,
-            "date": "",
             "pathes": ["lesta\\mods", "lesta\\res_mods"]
         },
         {
@@ -24,8 +22,6 @@
             ],
             "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
             "v_url": "https://wotsite.net/pritsely/4333-pritsely-ot-jimbo-dlya-world-of-tanks.html",
-            "flag": false,
-            "date": "",
             "pathes": ["mods", "Сведение 2\\crosshair_Controls.wotmod"]
         },
         {
@@ -35,8 +31,6 @@
             ],
             "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
             "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/12202-mod-stvol-uluchshennye-otlichitelnye-otmetki-na-stvolakh.html",
-            "flag": false,
-            "date": "",
             "pathes": ["Вариант 2\\mods"]
         },
         {
@@ -47,8 +41,6 @@
             ],
             "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
             "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/4873-mod-ubitykh-tankov-wot.html",
-            "flag": false,
-            "date": "",
             "pathes": ["Белые сбитые гусеницы\\Lesta\\mods", "Белые трупы\\Lesta\\mods"]
         },
         {
@@ -57,9 +49,7 @@
                 "tv.protanki.reducedarmor"
             ],
             "url": "https://dwn.wotsite.net/mod-dlya-analiza-broni-tankov-v-angare-wot.rar",
-            "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/12309-mod-dlya-analiza-broni-tankov-pryamo-v-angare-dlya-wot.html",
-            "flag": false,
-            "date": ""
+            "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/12309-mod-dlya-analiza-broni-tankov-pryamo-v-angare-dlya-wot.html"
         },
         {
             "name": "Боевые раны",
@@ -67,10 +57,7 @@
                 "me.poliroid.battlehits"
             ],
             "url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
-            "v_url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
-            "flag": false,
-            "cls": "down_new",
-            "date": ""
+            "v_url": "https://wotspeak.org/mods/805-battle-hits-wot.html"
         },
         {
             "name": "Процент отметки",
@@ -78,9 +65,7 @@
                 "me.poliroid.gunmarks-lebwa"
             ],
             "url": "https://down.wotspeak.org/mods_universal/lebwa.tv.gunmarks.zip",
-            "v_url": "https://wotspeak.org/mods/756-procent-otmetki-orudie-wot.html",
-            "flag": false,
-            "date": ""
+            "v_url": "https://wotspeak.org/mods/756-procent-otmetki-orudie-wot.html"
         },
         {
             "name": "Время сведения",
@@ -88,9 +73,7 @@
                 "tv.protanki.reductioninfo"
             ],
             "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
-            "v_url": "https://wotspeak.org/mods/807-indikaciya-vremya-svedeniya-pricela-dlya-world-of-tanks.html",
-            "flag": false,
-            "date": ""
+            "v_url": "https://wotspeak.org/mods/807-indikaciya-vremya-svedeniya-pricela-dlya-world-of-tanks.html"
         }
     ]
 ]
