@@ -1,21 +1,32 @@
-#import os
 import json
 import PySimpleGUI as sg
-#from urllib.request import urlopen, Request, urlretrieve
 import requests
-from datetime import datetime
+from datetime import datetime as dt
 from pathlib import Path
 from bs4 import BeautifulSoup
 from subprocess import call
 from shutil import rmtree
+import xml.etree.ElementTree as ET
+from winreg import OpenKey, EnumValue, HKEY_CURRENT_USER as HKCU, HKEY_LOCAL_MACHINE as HKLM
 
+
+with OpenKey(HKLM, r'Software\Microsoft\Windows\CurrentVersion\Uninstall\7-Zip') as hh:
+    ARCH = Path(EnumValue(hh, 3)[1], '7z')                  # path to 7z
+with OpenKey(HKCU, 'Volatile Environment') as hh:
+    appdata = EnumValue(hh, 6)[1]
+file = Path(appdata, r'Lesta\GameCenter\user_info.xml')
+root = ET.parse(file).getroot()                             # find Tanki on computer
+for elem in root.iter('instance'):
+    if elem.attrib['id'] == 'WOT_RU':
+        res = elem.attrib['game_tag']
+with OpenKey(HKCU, fr'Software\Microsoft\Windows\CurrentVersion\Uninstall\LGC-{res}') as hh:
+    GAMEDIR = EnumValue(hh, 2)[1]
+root = ET.parse(Path(GAMEDIR, 'version.xml')).getroot()     # game version
+VERSION = root.find('version').text[3:-7]
+MODSDIR = Path(GAMEDIR, 'mods', VERSION)
 with open('conf.json', encoding='utf-8') as fp:
     data = json.load(fp)
-GAMEDIR, ARCH, mods = data                                  # ARCH - path to 7z
-with open(Path(GAMEDIR, 'version.xml')) as px:              # game version
-    for _ in range(3):
-        VERSION = px.readline()[13:-18]
-MODSDIR = Path(GAMEDIR, 'mods', VERSION)
+mods = data
 
 sg.theme('PythonPlus')
 
@@ -32,8 +43,8 @@ def foo(mod):                                               # for rendering
             return False, 'black', True                     # check, color, upd
     check = real_f[0].suffix == '.wotmod'
     last_m = requests.get(url, stream=True).headers['last-modified']
-    create_f = datetime.fromtimestamp(Path.stat(real_f[0]).st_ctime).strftime('%d %b %Y')
-    upd = datetime.strptime(last_m[5:16], '%d %b %Y') > create_f
+    create_f = dt.fromtimestamp(Path.stat(real_f[0]).st_ctime).strftime('%d %b %Y')
+    upd = dt.strptime(last_m[5:16], '%d %b %Y') > create_f
     return check, 'white', upd                              # check, color, upd
 
 def mod_version(mod):                               # version of mod
@@ -70,9 +81,9 @@ layout = [[sg.Text('Папка c игрой:')],
           [sg.Text('Версия игры:   '), sg.Text(VERSION)]]
 for mod in mods:
     check, color, upd = foo(mod)
-    tmp = [sg.Check('', default=check, key=mod["name"])]                            # checkbutton
+    tmp = [sg.Check('', default=check, key=f'_{mod["name"]}')]                            # checkbutton
     tmp += [sg.Text(mod["name"], text_color=color)]                                 # mod name
-    tmp += upd * [sg.Button('upd', key=mod["name"]), sg.Text(mod_version(mod))]     # update button
+    tmp += [sg.Button('upd', key=mod["name"], tooltip=mod_version(mod))] * upd      # update button
     layout += [tmp]
 layout += [[sg.Button('Применить'), sg.Button('Обновить все')],
            [sg.CloseButton('CLOSE', button_color='red')]]
@@ -89,13 +100,12 @@ while True:
         continue
     if event == 'Обновить все':
         for mod in mods:
-            if mod['flag']:
+            if mod['name'] in values:
                 inst(mod)
-                pos = mods.index(mod)
-                window[mod["name"]+str(pos)].update(visible=False)
+                window[mod["name"]].update(visible=False)
         continue
     for mod in mods:
-        if mod['name'] == event[:-1]:
+        if mod['name'] == event:
             inst(mod)
             window[event].update(visible=False)
 

@@ -1,93 +1,89 @@
 [
-    "D:\\Lesta\\Tanki",
-    "D:\\apps\\7-Zip\\7z",
-    [
-        {
-            "name": "xvm",
-            "files": [
-                "com.modxvm.xfw\\com.modxvm.xfw.actionscript"
-            ],
-            "url": "https://nightly.modxvm.com/download/master/xvm_latest.zip",
-            "v_url": "https://nightly.modxvm.com/download/master/wot_version_lesta.txt",
-            "pathes": [
-                "lesta\\mods",
-                "lesta\\res_mods"
-            ]
-        },
-        {
-            "name": "Прицел от Jimbo",
-            "files": [
-                "crosshair_arcade",
-                "crosshair_Controls",
-                "crosshair_sniper",
-                "crosshair_strategic",
-                "tv.protanki.sights"
-            ],
-            "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
-            "v_url": "https://wotsite.net/pritsely/4333-pritsely-ot-jimbo-dlya-world-of-tanks.html",
-            "pathes": [
-                "mods",
-                "Сведение 2\\crosshair_Controls.wotmod"
-            ]
-        },
-        {
-            "name": "Отметки на стволах",
-            "files": [
-                "Marks_On_Gun"
-            ],
-            "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
-            "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/12202-mod-stvol-uluchshennye-otlichitelnye-otmetki-na-stvolakh.html",
-            "pathes": [
-                "Вариант 2\\mods"
-            ]
-        },
-        {
-            "name": "Белые трупы",
-            "files": [
-                "wTanks",
-                "wTanks_lst",
-                "wTracks",
-                "wTracks_lst"
-            ],
-            "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
-            "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/4873-mod-ubitykh-tankov-wot.html",
-            "pathes": [
-                "Белые сбитые гусеницы\\Lesta\\mods",
-                "Белые трупы\\Lesta\\mods"
-            ]
-        },
-        {
-            "name": "Анализ брони в ангаре",
-            "files": [
-                "tv.protanki.reducedarmor"
-            ],
-            "url": "https://dwn.wotsite.net/mod-dlya-analiza-broni-tankov-v-angare-wot.rar",
-            "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/12309-mod-dlya-analiza-broni-tankov-pryamo-v-angare-dlya-wot.html"
-        },
-        {
-            "name": "Боевые раны",
-            "files": [
-                "me.poliroid.battlehits"
-            ],
-            "url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
-            "v_url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
-            "dwn": "https://modp.wgcdn.co/media/mod_files/1.21.1.0_BattleHits_1.8.9.zip"
-        },
-        {
-            "name": "Процент отметки",
-            "files": [
-                "me.poliroid.gunmarks-lebwa"
-            ],
-            "url": "https://down.wotspeak.org/mods_universal/lebwa.tv.gunmarks.zip",
-            "v_url": "https://wotspeak.org/mods/756-procent-otmetki-orudie-wot.html"
-        },
-        {
-            "name": "Время сведения",
-            "files": [
-                "tv.protanki.reductioninfo"
-            ],
-            "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
-            "v_url": "https://wotspeak.org/mods/807-indikaciya-vremya-svedeniya-pricela-dlya-world-of-tanks.html"
-        }
-    ]
+    {
+        "name": "xvm",
+        "files": [
+            "com.modxvm.xfw\\com.modxvm.xfw.actionscript"
+        ],
+        "url": "https://nightly.modxvm.com/download/master/xvm_latest.zip",
+        "v_url": "https://nightly.modxvm.com/download/master/wot_version_lesta.txt",
+        "pathes": [
+            "lesta\\mods",
+            "lesta\\res_mods"
+        ]
+    },
+    {
+        "name": "Прицел от Jimbo",
+        "files": [
+            "crosshair_arcade",
+            "crosshair_Controls",
+            "crosshair_sniper",
+            "crosshair_strategic",
+            "tv.protanki.sights"
+        ],
+        "url": "https://dwn.wotsite.net/pritsely-ot-jimbo-dlya-wot.rar",
+        "v_url": "https://wotsite.net/pritsely/4333-pritsely-ot-jimbo-dlya-world-of-tanks.html",
+        "pathes": [
+            "mods",
+            "Сведение 2\\crosshair_Controls.wotmod"
+        ]
+    },
+    {
+        "name": "Отметки на стволах",
+        "files": [
+            "Marks_On_Gun"
+        ],
+        "url": "https://dwn.wotsite.net/mod-stvol-1.5.rar",
+        "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/12202-mod-stvol-uluchshennye-otlichitelnye-otmetki-na-stvolakh.html",
+        "pathes": [
+            "Вариант 2\\mods"
+        ]
+    },
+    {
+        "name": "Белые трупы",
+        "files": [
+            "wTanks",
+            "wTanks_lst",
+            "wTracks",
+            "wTracks_lst"
+        ],
+        "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
+        "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/4873-mod-ubitykh-tankov-wot.html",
+        "pathes": [
+            "Белые сбитые гусеницы\\Lesta\\mods",
+            "Белые трупы\\Lesta\\mods"
+        ]
+    },
+    {
+        "name": "Анализ брони в ангаре",
+        "files": [
+            "tv.protanki.reducedarmor"
+        ],
+        "url": "https://dwn.wotsite.net/mod-dlya-analiza-broni-tankov-v-angare-wot.rar",
+        "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/12309-mod-dlya-analiza-broni-tankov-pryamo-v-angare-dlya-wot.html"
+    },
+    {
+        "name": "Боевые раны",
+        "files": [
+            "me.poliroid.battlehits"
+        ],
+        "url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
+        "v_url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
+        "dwn": "https://modp.wgcdn.co/media/mod_files/1.21.1.0_BattleHits_1.8.9.zip"
+    },
+    {
+        "name": "Процент отметки",
+        "files": [
+            "me.poliroid.gunmarks-lebwa"
+        ],
+        "url": "https://down.wotspeak.org/mods_universal/lebwa.tv.gunmarks.zip",
+        "v_url": "https://wotspeak.org/mods/756-procent-otmetki-orudie-wot.html"
+    },
+    {
+        "name": "Время сведения",
+        "files": [
+            "tv.protanki.reductioninfo"
+        ],
+        "url": "https://down.wotspeak.org/protanki/807-tv.protanki.reductioninfo.zip",
+        "v_url": "https://wotspeak.org/mods/807-indikaciya-vremya-svedeniya-pricela-dlya-world-of-tanks.html"
+    }
 ]
