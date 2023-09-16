@@ -15,3 +15,4 @@
 try sg.Check with enable_events=True (maybe not)
 проверить: upd * ... или ... * upd
 лог файл?
+обновлять окно после обновления мода/модов

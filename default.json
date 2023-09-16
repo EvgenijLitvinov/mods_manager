@@ -62,7 +62,8 @@
             "me.poliroid.gunmarks-lebwa"
         ],
         "url": "https://down.wotspeak.org/mods_universal/lebwa.tv.gunmarks.zip",
-        "v_url": "https://wotspeak.org/mods/756-procent-otmetki-orudie-wot.html"
+        "v_url": "https://wotspeak.org/mods/756-procent-otmetki-orudie-wot.html",
+        "pathes": ["me.poliroid.gunmarks-lebwa"]
     },
     {
         "name": "Время сведения",

@@ -43,7 +43,7 @@ def foo(mod):                                               # for rendering
             return False, 'black', True                     # check, color, upd
     check = real_f[0].suffix == '.wotmod'
     last_m = requests.get(url, stream=True).headers['last-modified']
-    create_f = dt.fromtimestamp(Path.stat(real_f[0]).st_ctime).strftime('%d %b %Y')
+    create_f = dt.fromtimestamp(Path.stat(real_f[0]).st_ctime)
     upd = dt.strptime(last_m[5:16], '%d %b %Y') > create_f
     return check, 'white', upd                              # check, color, upd
 
@@ -58,6 +58,7 @@ def mod_version(mod):                               # version of mod
 # ------------------------------- download & install mod -------------------    
 def inst(mod):
     sg.popup_ok(f'Installing {mod["name"]}', background_color='red', no_titlebar=True)
+#    return
     url = mod['url']
     if 'dwn' in mod:
         url = mod['dwn']
@@ -68,7 +69,7 @@ def inst(mod):
     else:
         call(f'{ARCH} x -y {tmparj} -ooops > nul', shell=True)
         for p in mod['pathes']:
-            p = Path('oops', p)
+            p = tuple(Path('oops').glob(f'{p}*'))[0]
             if p.is_dir():
                 call(f'xcopy /y /e {p} {Path(GAMEDIR, p.parts[-1])} > nul', shell=True)
             else:
@@ -81,12 +82,13 @@ layout = [[sg.Text('Папка c игрой:')],
           [sg.Text('Версия игры:   '), sg.Text(VERSION)]]
 for mod in mods:
     check, color, upd = foo(mod)
-    tmp = [sg.Check('', default=check, key=f'_{mod["name"]}')]                            # checkbutton
-    tmp += [sg.Text(mod["name"], text_color=color)]                                 # mod name
-    tmp += [sg.Button('upd', key=mod["name"], tooltip=mod_version(mod))] * upd      # update button
+    tmp = [sg.Check('', default=check, disabled=color=='black', key=f'_{mod["name"]}')]                            # checkbutton
+    tmp += [sg.Text(mod["name"], text_color=color)]                                       # mod name
+    tmp += [sg.Button(f'upd ### v.{mod_version(mod)}', key=mod["name"], visible=upd)]     # update button
     layout += [tmp]
-layout += [[sg.Button('Применить'), sg.Button('Обновить все')],
-           [sg.CloseButton('CLOSE', button_color='red')]]
+layout += [[sg.Button('Обновить иконки'), sg.Button('Clean XVM')],
+            [sg.Button('Применить'), sg.Button('Обновить все')],
+            [sg.CloseButton('CLOSE', button_color='red')]]
 
 window = sg.Window('Hello world!', layout)
 
@@ -100,14 +102,16 @@ while True:
         continue
     if event == 'Обновить все':
         for mod in mods:
-            if mod['name'] in values:
+            if window[mod["name"]].visible:
                 inst(mod)
                 window[mod["name"]].update(visible=False)
+                window[f'_{mod["name"]}'].update(disabled=False)
         continue
     for mod in mods:
         if mod['name'] == event:
             inst(mod)
             window[event].update(visible=False)
+            window[f'_{event}'].update(disabled=False)
 
 """
 data = GAMEDIR, ARCH, mods
