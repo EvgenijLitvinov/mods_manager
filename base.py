@@ -35,8 +35,7 @@ def foo(mod):                                               # for rendering
     if mod['name'] == 'Боевые раны':
         soup = BeautifulSoup(requests.get(url, stream=True).content, 'lxml')
         s = soup.find('a', 'down_new')['href']
-        url = s[s.find('https') : s.find('&')]
-        mod['dwn'] = url
+        mod['dwn'] = url = s[s.find('https') : s.find('&')]
     for file in mod['files']:
         real_f = tuple(MODSDIR.glob(f'{file}*'))
         if not real_f:
