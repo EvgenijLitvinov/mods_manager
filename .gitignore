@@ -1,3 +1,4 @@
 cache.json
 test*
 !testpsg.*
+*.exe
