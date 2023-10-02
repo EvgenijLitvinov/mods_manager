@@ -27,7 +27,7 @@ if not 'etag' in cache or cache['etag'] != etag:
 
 print('going on')
 
-layout = [[sg.Text('new text')],
+layout = [[sg.Text('old text')],
            [sg.Button('ok')]]
 window = sg.Window('main window', layout)
 event, values = window.read()
