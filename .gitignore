@@ -1,4 +1,4 @@
 cache.json
 test*
-!testpsg.*
-*exe
+!testpsg.py
+*.exe
