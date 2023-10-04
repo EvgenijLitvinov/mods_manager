@@ -18,10 +18,11 @@ if not 'etag' in cache or cache['etag'] != etag:
     print(event, values)
     if event == 'yes':
         print('updating')
-        url = 'https://github.com/EvgenijLitvinov/mods_manager/releases/download/v1.0/conf.json'
-        Path('conf.json').write_bytes(requests.get(url, stream=True).content)
-        url = 'https://github.com/EvgenijLitvinov/mods_manager/releases/download/v1.0/testpsg.exe'
-        Path('testpsg.exe').write_bytes(requests.get(url, stream=True).content)
+#        url = 'https://github.com/EvgenijLitvinov/mods_manager/releases/download/v1.0/conf.json'
+#        Path('conf.json').write_bytes(requests.get(url, stream=True).content)
+#        url = 'https://github.com/EvgenijLitvinov/mods_manager/releases/download/v1.0/testpsg.exe'
+#        Path('testpsg.exe').write_bytes(requests.get(url, stream=True).content)
+        Path('testpsg.exe').rename('_testpsg.exe')
     window.close()
 
 
