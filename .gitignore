@@ -1,4 +1,3 @@
 cache.json
 test*
-!testpsg.py
 *.exe
