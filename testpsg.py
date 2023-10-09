@@ -10,7 +10,7 @@ try:
 except FileNotFoundError:
     pass
 
-layout = [[sg.Text('old text')],
+layout = [[sg.Text('new text')],
            [sg.Button('ok')]]
 window = sg.Window('main window', layout)
 event, values = window.read()
