@@ -17,7 +17,7 @@ for s in ['modsmgmt.exe', 'base.exe', 'conf.json']:
     if not s in cache or cache[s] != etag:
         flag = True
         print('updating', s)
-        if s == 'start.py':
+        if s == 'modsmgmt.exe':
             Path('_modsmgmt.exe').write_bytes(requests.get(url+s, stream=True).content)
         else:
             Path(s).write_bytes(requests.get(url+s, stream=True).content)
