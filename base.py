@@ -9,10 +9,12 @@ from shutil import rmtree
 import xml.etree.ElementTree as ET
 from winreg import OpenKey, EnumValue, HKEY_CURRENT_USER as HKCU, HKEY_LOCAL_MACHINE as HKLM
 import sys, os, signal
+import time
 
 
-if sys.argv[1]:
+if len(sys.argv) > 1:
     os.kill(int(sys.argv[1]), signal.SIGTERM)
+time.sleep(1)
 try:
     Path('modsmgmt.exe').write_bytes(Path('_modsmgmt.exe').read_bytes())
     Path('_modsmgmt.exe').unlink()
