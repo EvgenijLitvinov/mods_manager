@@ -14,9 +14,8 @@ import sys, os, signal
 if sys.argv[1]:
     os.kill(int(sys.argv[1]), signal.SIGTERM)
 try:
-    tmp = Path('modsmgmt.exe')
-    tmp.write_bytes(Path('_', tmp).read_bytes())
-    tmp.unlink()
+    Path('modsmgmt.exe').write_bytes(Path('_modsmgmt.exe').read_bytes())
+    Path('_modsmgmt.exe').unlink()
 except FileNotFoundError:
     pass
 
