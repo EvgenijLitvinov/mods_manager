@@ -8,7 +8,17 @@ from subprocess import call
 from shutil import rmtree
 import xml.etree.ElementTree as ET
 from winreg import OpenKey, EnumValue, HKEY_CURRENT_USER as HKCU, HKEY_LOCAL_MACHINE as HKLM
+import sys, os, signal
 
+
+if sys.argv[1]:
+    os.kill(int(sys.argv[1]), signal.SIGTERM)
+try:
+    tmp = Path('modsmgmt.exe')
+    tmp.write_bytes(Path('_', tmp).read_bytes())
+    tmp.unlink()
+except FileNotFoundError:
+    pass
 
 with OpenKey(HKLM, r'Software\Microsoft\Windows\CurrentVersion\Uninstall\7-Zip') as hh:
     ARCH = Path(EnumValue(hh, 3)[1], '7z')                  # path to 7z
