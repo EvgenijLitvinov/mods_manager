@@ -26,13 +26,10 @@ if not 'ETag' in cache or cache['ETag'] != etag:
     cache['ETag'] = etag
     call('mysetup.exe', shell=True)
 # ---------------- search for the 7z and Tanki on computer ------------------------
-try:
-    ARCH = cache['_7z']
-    GAMEDIR = cache['Tanki']
-except KeyError:
+if not '_7z' in cache:
     flag = True
     with OpenKey(HKLM, r'Software\Microsoft\Windows\CurrentVersion\Uninstall\7-Zip') as hh:
-        cache['_7z'] = ARCH = Path(EnumValue(hh, 3)[1], '7z')
+        cache['_7z'] = Path(EnumValue(hh, 3)[1], '7z')
     with OpenKey(HKCU, 'Volatile Environment') as hh:
         appdata = EnumValue(hh, 6)[1]
     file = Path(appdata, r'Lesta\GameCenter\user_info.xml')
@@ -41,11 +38,11 @@ except KeyError:
         if elem.attrib['id'] == 'WOT_RU':
             res = elem.attrib['game_tag']
     with OpenKey(HKCU, fr'Software\Microsoft\Windows\CurrentVersion\Uninstall\LGC-{res}') as hh:
-        cache['Tanki'] = GAMEDIR = EnumValue(hh, 2)[1]
+        cache['Tanki'] = EnumValue(hh, 2)[1]
 
-root = ET.parse(Path(GAMEDIR, 'version.xml')).getroot()
+root = ET.parse(Path(cache['Tanki'], 'version.xml')).getroot()
 VERSION = root.find('version').text[3:-7]                   # game version
-MODSDIR = Path(GAMEDIR, 'mods', VERSION)
+MODSDIR = Path(cache['Tanki'], 'mods', VERSION)
 
 with open('conf.json', encoding='utf-8') as fp:
     mods = json.load(fp)
@@ -86,20 +83,20 @@ def inst(mod):
     tmparj = Path('tmparj')
     tmparj.write_bytes(requests.get(url, stream=True).content)
     if not 'pathes' in mod:
-        call(f'{ARCH} x -y {tmparj} -i!mods -o{GAMEDIR}', shell=True)
+        call(f'{cache["_7z"]} x -y {tmparj} -i!mods -o{cache["Tanki"]}', shell=True)
     else:
-        call(f'{ARCH} x -y {tmparj} -ooops > nul', shell=True)
+        call(f'{cache["_7z"]} x -y {tmparj} -ooops > nul', shell=True)
         for p in mod['pathes']:
             p = tuple(Path('oops').glob(f'{p}*'))[0]
             if p.is_dir():
-                call(f'xcopy /y /e {p} {Path(GAMEDIR, p.parts[-1])} > nul', shell=True)
+                call(f'xcopy /y /e {p} {Path(cache["Tanki"], p.parts[-1])} > nul', shell=True)
             else:
                 Path(MODSDIR, p.parts[-1]).write_bytes(p.read_bytes())
         rmtree('oops')
     tmparj.unlink()
 # -------------------------------------------------------------------------------
 layout = [[sg.Text('Папка c игрой:')],
-          [sg.Input(default_text=GAMEDIR), sg.FolderBrowse()],
+          [sg.Input(default_text=cache['Tanki']), sg.FolderBrowse()],
           [sg.Text('Версия игры:   '), sg.Text(VERSION)]]
 for mod in mods:
     check, color, upd = foo(mod)

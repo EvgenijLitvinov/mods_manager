@@ -31,7 +31,6 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "D:\repo\mods_manager\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\repo\mods_manager\base.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "D:\repo\mods_manager\conf.json"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
@@ -41,5 +40,5 @@ Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
+Filename: "taskkill"; Parameters: "/f /im modsmgmt.exe"
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-
