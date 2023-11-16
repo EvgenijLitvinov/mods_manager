@@ -10,18 +10,24 @@ import xml.etree.ElementTree as ET
 from winreg import OpenKey, EnumValue, HKEY_CURRENT_USER as HKCU, HKEY_LOCAL_MACHINE as HKLM
 
 
+# ------------------ checking for updates -----------------------------------
+url = 'https://github.com/EvgenijLitvinov/mods_manager/releases/download/v1.0/mysetup.exe'
+flag = False
+cache = {}
+etag = requests.get(url, stream=True).headers['ETag']
 try:
     with open('cache.json', encoding='utf-8') as fp:
         cache = json.load(fp)
 except FileNotFoundError:
-    cache = {}
-# ------------------ checking for updates -----------------------------------
-url = 'https://github.com/EvgenijLitvinov/mods_manager/releases/download/v1.0/mysetup.exe'
-flag = False
-etag = requests.get(url, stream=True).headers['ETag']
-if not 'ETag' in cache or cache['ETag'] != etag:
     flag = True
-    sg.popup('UPDATING', auto_close_duration=2, no_titlebar=True)
+    cache['ETag'] = etag
+except:
+    cache['ETag'] = '~'
+if cache['ETag'] != etag:
+    flag = True
+    window = sg.Window('Updating!', [[sg.Text('..............UPDATING...............')]])
+    event, values = window.read()
+    window.close()
     Path('mysetup.exe').write_bytes(requests.get(url, stream=True).content)
     cache['ETag'] = etag
     call('mysetup.exe', shell=True)
@@ -29,7 +35,7 @@ if not 'ETag' in cache or cache['ETag'] != etag:
 if not '_7z' in cache:
     flag = True
     with OpenKey(HKLM, r'Software\Microsoft\Windows\CurrentVersion\Uninstall\7-Zip') as hh:
-        cache['_7z'] = Path(EnumValue(hh, 3)[1], '7z')
+        cache['_7z'] = EnumValue(hh, 3)[1] + '7z'
     with OpenKey(HKCU, 'Volatile Environment') as hh:
         appdata = EnumValue(hh, 6)[1]
     file = Path(appdata, r'Lesta\GameCenter\user_info.xml')

@@ -40,5 +40,15 @@ Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
-Filename: "taskkill"; Parameters: "/f /im modsmgmt.exe"
+;Filename: "taskkill"; Parameters: "/f /t /im modsmgmt.exe"
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+
+[Code]
+function InitializeSetup(): Boolean;
+var
+    ResultCode: Integer;
+begin
+    Result := Exec('>', 'taskkill /f /im modsmgmt.exe', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+    if Result = False then
+        MsgBox('Error!', mbInformation, MB_OK);
+end;
