@@ -33,8 +33,8 @@
     {
         "name": "Белые трупы",
         "files": [
-            "wTanks", "wTanks_lst",
-            "wTracks", "wTracks_lst"
+            "wTanks_lesta",
+            "wTracks_lesta"
         ],
         "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
         "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/4873-mod-ubitykh-tankov-wot.html",

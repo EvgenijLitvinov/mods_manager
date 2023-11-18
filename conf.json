@@ -41,10 +41,8 @@
     {
         "name": "Белые трупы",
         "files": [
-            "wTanks",
-            "wTanks_lst",
-            "wTracks",
-            "wTracks_lst"
+            "wTanks_lesta",
+            "wTracks_lesta"
         ],
         "url": "https://dwn.wotsite.net/mod-belye-trupy-tankov-dlya-wot.rar",
         "v_url": "https://wotsite.net/mody-dlya-world-of-tanks/4873-mod-ubitykh-tankov-wot.html",
@@ -67,8 +65,7 @@
             "me.poliroid.battlehits"
         ],
         "url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
-        "v_url": "https://wotspeak.org/mods/805-battle-hits-wot.html",
-        "dwn": "https://modp.wgcdn.co/media/mod_files/1.21.1.0_BattleHits_1.8.9.zip"
+        "v_url": "https://wotspeak.org/mods/805-battle-hits-wot.html"
     },
     {
         "name": "Процент отметки",
