@@ -24,12 +24,13 @@ except FileNotFoundError:
 except:
     cache['ETag'] = '~'
 if cache['ETag'] != etag:
-    flag = True
     window = sg.Window('Updating!', [[sg.Text('..............UPDATING...............')]])
     event, values = window.read()
     window.close()
     Path('mysetup.exe').write_bytes(requests.get(url, stream=True).content)
     cache['ETag'] = etag
+    with open('cache.json', 'w', encoding='utf-8') as fp:
+        json.dump(cache, fp, ensure_ascii=False, indent=4)
     call('mysetup.exe', shell=True)
 # ---------------- search for the 7z and Tanki on computer ------------------------
 if not '_7z' in cache:

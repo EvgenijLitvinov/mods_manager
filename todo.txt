@@ -19,3 +19,4 @@ try sg.Check with enable_events=True (maybe not)
 ярлыки exe файлов
 работа с конфигом xvm
 автоматизироовать создание exe-шников
+удалить mysetup.exe после обновления проги
